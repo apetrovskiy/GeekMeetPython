@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Intellij IDEA
+/.idea/
+.idea/
+workspace.xml
