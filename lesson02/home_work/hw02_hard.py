@@ -6,7 +6,10 @@ __author__ = 'Петровский А.Е.'
 equation = 'y = -12x + 11111140.2121'
 x = 2.5
 # вычислите и выведите y
-
+multiplier = int(equation[4:7])
+additional_number = float(equation[11:])
+print("result: ", multiplier * x + additional_number)
+print("===============================================")
 
 # Задание-2: Дата задана в виде строки формата 'dd.mm.yyyy'.
 # Проверить, корректно ли введена дата.
@@ -26,6 +29,42 @@ date = '01.22.1001'
 date = '1.12.1001'
 date = '-2.10.3001'
 
+input_data = ['01.11.1985', '01.22.1001', '1.12.1001', '-2.10.3001', '32.10.1986', '31.09.1977', '01.01.-123', '01.01.10000']
+result_list = []
+
+for date_item in input_data:
+    if len(date_item) != 10 or '.' != date_item[2:3] or '.' != date_item[5:6]:
+        result_list.append(date_item + " format incorrect")
+        continue
+
+    day_number = int(date_item[0:2])
+    month_number = int(date_item[3:5])
+    year_number = int(date_item[6:])
+
+    if 0 >= int(date_item[3:5]) or int(date_item[3:5]) > 12:
+        result_list.append(date_item + " month incorrect")
+        continue
+
+    if 0 >= day_number or day_number > 31:
+        result_list.append(date_item + " day incorrect")
+        continue
+
+    if month_number in (2, 4, 6, 9, 11):
+        if day_number > 30:
+            result_list.append(date_item + " day incorrect")
+            continue
+
+    if 0 >= year_number or year_number > 9999:
+        result_list.append(date_item + " year incorrect")
+        continue
+
+    result_list.append(date_item + " correct")
+
+print(result_list)
+
+
+
+print("===============================================")
 
 # Задание-3: "Перевёрнутая башня" (Задача олимпиадного уровня)
 #
@@ -56,3 +95,7 @@ date = '-2.10.3001'
 #
 # Вход: 11
 # Выход: 5 3
+
+
+
+print("===============================================")
