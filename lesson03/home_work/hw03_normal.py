@@ -5,7 +5,13 @@ __author__ = 'Петровский А.Е.'
 # Первыми элементами ряда считать цифры 1 1
 
 def fibonacci(n, m):
-    pass
+    def fibonacci_number(n):
+        if 1 == n or 2 == n:
+            return 1
+
+print([1] == fibonacci(1, 1))
+print([1, 1] == fibonacci(1, 2))
+print([1, 1, 2] == fibonacci(1, 3))
 
 # Задача-2:
 # Напишите функцию, сортирующую принимаемый список по возрастанию.
