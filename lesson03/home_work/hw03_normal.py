@@ -6,9 +6,13 @@ __author__ = 'Петровский А.Е.'
 
 def fibonacci(n, m):
     def fibonacci_number(n):
-        if 1 == n or 2 == n:
-            return 1
+        if 2 > n:
+            return n
+        return fibonacci_number(n - 1) + fibonacci_number(n - 2)
+    result_list = list(map(lambda x: fibonacci_number(x), range(n, m + 1)))
+    return result_list
 
+print([2, 3, 5, 8] == fibonacci(3, 6))
 print([1] == fibonacci(1, 1))
 print([1, 1] == fibonacci(1, 2))
 print([1, 1, 2] == fibonacci(1, 3))
