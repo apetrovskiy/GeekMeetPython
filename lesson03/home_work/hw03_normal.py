@@ -69,8 +69,8 @@ def is_parallelogram(**kwargs):
 
     horizontal_equality = get_horizontal_line_length(kwargs["A2"], kwargs["A3"]) == get_horizontal_line_length(
         kwargs["A1"], kwargs["A4"])
-    vertical_equality = get_vertical_line_length(kwargs["A2"], kwargs["A1"]) == get_vertical_line_length(kwargs["A3"],
-                                                                                                         kwargs["A4"])
+    vertical_equality = get_vertical_line_length(kwargs["A1"], kwargs["A2"]) == get_vertical_line_length(kwargs["A4"],
+                                                                                                         kwargs["A3"])
     if horizontal_equality and vertical_equality:
         return True
     return False
