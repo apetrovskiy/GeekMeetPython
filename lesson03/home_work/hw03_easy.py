@@ -1,5 +1,6 @@
 __author__ = 'Петровский А.Е.'
 
+
 # Задание-1:
 # Напишите функцию, округляющую полученное произвольное десятичное число
 # до кол-ва знаков (кол-во знаков передается вторым аргументом).
@@ -20,6 +21,7 @@ print(2.2 == my_round(2.1999967, 5))
 print(3.0 == my_round(2.9999967, 5))
 print('===============================================================')
 
+
 # Задание-2:
 # Дан шестизначный номер билета. Определить, является ли билет счастливым.
 # Решение реализовать в виде функции.
@@ -29,10 +31,12 @@ print('===============================================================')
 def lucky_ticket(ticket_number):
     first_part = int(ticket_number / 1000)
     last_part = ticket_number - first_part * 1000
+
     def sum_of_digits(number):
         hundreds = int(number / 100)
         tens = int((number - hundreds * 100) / 10)
         return hundreds + tens + (number - hundreds * 100 - tens * 10)
+
     return sum_of_digits(first_part) == sum_of_digits(last_part)
 
 
