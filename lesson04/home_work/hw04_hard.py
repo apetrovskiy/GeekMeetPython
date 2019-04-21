@@ -6,7 +6,7 @@ __author__ = 'Петровский А.Е.'
 matrix = [[1, 0, 8],
           [3, 4, 1],
           [0, 4, 2]]
-          
+
 # Выполнить поворот (транспонирование) матрицы
 # Пример. Результат:
 # matrix_rotate = [[1, 3, 0],
@@ -14,6 +14,53 @@ matrix = [[1, 0, 8],
 #                  [8, 1, 2]]
 
 # Суть сложности hard: Решите задачу в одну строку
+
+expected_matrix = [[1, 3, 0],
+                   [0, 4, 4],
+                   [8, 1, 2]]
+
+
+def rotate_matrix_01(m):
+    result_matrix = []
+    row = 0;
+    while len(m) > row:
+        line = m[row]
+        column = 0
+        new_line = []
+        while len(line) > column:
+            new_line.append(m[column][row])
+            column += 1
+        row += 1
+        result_matrix.append(new_line)
+    return result_matrix
+
+
+def rotate_matrix_02(m):
+    result_matrix = []
+    for i, row in enumerate(m):
+        new_row = []
+        for j, column in enumerate(row):
+            new_row.append(m[j][i])
+        result_matrix.append(new_row)
+    return result_matrix
+
+
+def rotate_matrix_03(m):
+    return list(map(list, zip(*m)))
+
+
+print(expected_matrix == rotate_matrix_01(matrix))
+print(expected_matrix == rotate_matrix_02(matrix))
+print(expected_matrix == rotate_matrix_03(matrix))
+
+print('=========rotate_matrix decomposition============')
+
+print("rotate_matrix = ", zip(*matrix))
+print("rotate_matrix = ", map(list, zip(*matrix)))
+map1 = map(list, zip(*matrix))
+for ii in map1:
+    print(ii)
+print("rotate_matrix = ", list(map(list, zip(*matrix))))
 
 print('===============================================================')
 

@@ -26,7 +26,7 @@ line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'zTYwZAiRwycdlHfyHNGmkNqSwXUrxGc'
 
 def get_lower_case_01(string):
-       return string
+       pattern = ''
 
 def get_lower_case_02(string):
        return string
