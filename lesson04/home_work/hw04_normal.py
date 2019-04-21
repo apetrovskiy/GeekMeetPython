@@ -6,6 +6,9 @@ __author__ = 'Петровский А.Е.'
 # Т.е. из строки "mtMmEZUOmcq" нужно получить ['mt', 'm', 'mcq']
 # Решить задачу двумя способами: с помощью re и без.
 
+line_01 = "mtMmEZUOmcq"
+expected_line_01 = ['mt', 'm', 'mcq']
+
 line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'GIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewVzK'\
        'TUfSYtBydXaVIpxWjNKgXANvIoumesCSSvjEGRJosUfuhRRDUuTQwLlJJJDdkVjfSAHqn'\
@@ -22,6 +25,17 @@ line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'XiUWgsKQrDOeZoNlZNRvHnLgCmysUeKnVJXPFIzvdDyleXylnKBfLCjLHntltignbQoiQ'\
        'zTYwZAiRwycdlHfyHNGmkNqSwXUrxGc'
 
+def get_lower_case_01(string):
+       return string
+
+def get_lower_case_02(string):
+       return string
+
+print(expected_line_01 == get_lower_case_01(line_01))
+print(expected_line_01 == get_lower_case_02(line_01))
+
+print(get_lower_case_01(line))
+print(get_lower_case_02(line))
 
 print('===============================================================')
 
