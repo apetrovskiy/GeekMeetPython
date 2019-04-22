@@ -90,5 +90,20 @@ print('===============================================================')
 # Найдите и выведите самую длинную последовательность одинаковых цифр
 # в вышезаполненном файле.
 
+def create_file(path, name):
+       return None
+
+def write_random_numbers(path, name):
+
+       return None
+
+def read_file(path, name):
+       return None
+
+
+def get_longest_sequence(string):
+       return None
+
+
 
 print('===============================================================')
