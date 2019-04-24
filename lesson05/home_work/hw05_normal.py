@@ -21,11 +21,6 @@ import sys
 import lesson05.home_work.hw05_easy as easy
 
 
-# easy.task01script01
-# easy.task01script02
-# easy.task02
-# easy.task03
-
 def help():
     print("help  - getting help")
     print("cd    - go to a folder")
@@ -33,31 +28,36 @@ def help():
     print("rmdir - remove a folder")
     print("mkdir - create a folder")
 
-
-def ls(path_to_dir):
+def cd():
     try:
-        print(os.listdir(path_to_dir))
+        print(os.chdir(dir_name + "1"))
     except FileNotFoundError:
-        print("Directory {} does not exist or inaccessible".format(path_to_dir))
+        print("Directory {} does not exist or inaccessible".format(dir_name))
+
+def ls():
+    try:
+        print(os.listdir(dir_name + "1"))
+    except FileNotFoundError:
+        print("Directory {} does not exist or inaccessible".format(dir_name))
 
 
 def rmdir():
     try:
         easy.task01script02.remove_dirs(dir_name, 1)
     except:
-        print("Directory {} does not exist or inaccessible".format(path_to_dir))
+        print("Directory {} does not exist or inaccessible".format(dir_name))
 
 
 def mkdir():
     try:
         easy.task01script01.create_dirs(dir_name, 1)
     except:
-        print("Directory {} does not exist or inaccessible".format(path_to_dir))
+        print("Directory {} does not exist or inaccessible".format(dir_name))
 
 
 do = {
     "help": help,
-    # "cd": cd,
+    "cd": cd,
     "ls": ls,
     "rmdir": rmdir,
     "mkdir": mkdir
