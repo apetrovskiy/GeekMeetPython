@@ -8,12 +8,17 @@ __author__ = 'Петровский А.Е.'
 import lesson05.home_work.scripts.hw05_easy_task01_script01 as task01script01
 import lesson05.home_work.scripts.hw05_easy_task01_script02 as task01script02
 
+task01script01.create_dirs('dirr', 9)
+task01script02.remove_dirs('dirr', 9)
+
 print('==================================================================')
 
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
 
 import lesson05.home_work.scripts.hw05_easy_task02 as task02
+
+task02.print_dirs()
 
 print('==================================================================')
 
@@ -22,5 +27,6 @@ print('==================================================================')
 
 import lesson05.home_work.scripts.hw05_easy_task03 as task03
 
+task03.copy_file_content()
 
 print('==================================================================')
