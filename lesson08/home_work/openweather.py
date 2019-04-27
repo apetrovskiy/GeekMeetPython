@@ -1,3 +1,5 @@
+__author__ = 'Петровский А.Е.'
+
 
 """ 
 == OpenWeatherMap ==
