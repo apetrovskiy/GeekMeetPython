@@ -1,3 +1,5 @@
+__author__ = 'Петровский А.Е.'
+
 # Задача-1:
 # Напишите небольшую консольную утилиту,
 # позволяющую работать с папками текущей директории.
@@ -13,3 +15,66 @@
 # Для решения данной задачи используйте алгоритмы из задания easy,
 # оформленные в виде соответствующих функций,
 # и импортированные в данный файл из easy.py
+
+import os
+import sys
+import lesson05.home_work.hw05_easy as easy
+
+
+def help():
+    print("help  - getting help")
+    print("cd    - go to a folder")
+    print("ls    - list files and subfolders")
+    print("rmdir - remove a folder")
+    print("mkdir - create a folder")
+
+def cd():
+    try:
+        print(os.chdir(dir_name + "1"))
+    except FileNotFoundError:
+        print("Directory {} does not exist or inaccessible".format(dir_name))
+
+def ls():
+    try:
+        print(os.listdir(dir_name + "1"))
+    except FileNotFoundError:
+        print("Directory {} does not exist or inaccessible".format(dir_name))
+
+
+def rmdir():
+    try:
+        easy.task01script02.remove_dirs(dir_name, 1)
+    except:
+        print("Directory {} does not exist or inaccessible".format(dir_name))
+
+
+def mkdir():
+    try:
+        easy.task01script01.create_dirs(dir_name, 1)
+    except:
+        print("Directory {} does not exist or inaccessible".format(dir_name))
+
+
+do = {
+    "help": help,
+    "cd": cd,
+    "ls": ls,
+    "rmdir": rmdir,
+    "mkdir": mkdir
+}
+
+try:
+    dir_name = sys.argv[2]
+except IndexError:
+    dir_name = None
+try:
+    key = sys.argv[1]
+except IndexError:
+    key = None
+if key:
+    if do.get(key):
+        do[key]()
+    else:
+        help()
+
+print('==================================================================')
